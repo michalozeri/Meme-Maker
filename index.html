@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Maker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body onload="onInit()">
+    <section class="images-gallery"></section>
+    <main class="main-container" hidden>
+        <section class="canvas-container">
+            <canvas class="my-canvas" height="450px" width="450px"></canvas>
+        </section>
+        <section class="menu-container" hidden>
+            <input name="text" type="text" placeholder="Add Text" oninput="onUpdateTxt(this)">
+            <div class="line-tools">
+                <button onclick="onMoveLineY(+10)">⬇</button>
+                <button onclick="onMoveLineY(-10)">⬆</button>
+                <button>➕</button>
+                <button>🚮</button>
+            </div>
+            <div class="font-tools">
+                <div>
+                    <button onclick="onChangeFontSize(+2)">A+</button>
+                    <BUtton onclick="onChangeFontSize(-2)">A-</BUtton>
+                    <button onclick="onMoveLineX('left')">L</button>
+                    <button onclick="onMoveLineX('center')">C</button>
+                    <button onclick="onMoveLineX('right')">R</button>
+                </div>
+                <div>
+                    <select onchange="onChangeFont(this.value)">
+                    <option value="IMPACT">Impact</option>
+                    <option value="ARIEL">Ariel</option>
+                    <option value="MONOSPACE">monospace</option>
+                    <option value="VERDANA">Verdana</option>
+                    <option value="COURIER NEW">Courier New</option>
+                    Courier New
+                </select>
+                    <input oninput="onChangeStrokeColor()" type="color" name="stroke-color" placeholder="Strok Color">
+                    <input oninput="onChangeFontColor()" type="color" name="font-color" placeholder="Font Color">
+                </div>
+            </div>
+            <div>
+                <button>Share</button>
+                <button>Download</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/meme-servic.js"></script>
+    <script src="js/meme-controller.js"></script>
+</body>
+
+</html>
