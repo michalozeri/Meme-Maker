@@ -25,6 +25,7 @@ var gImgs = [{ id: 1, url: '1.jpg', keywords: ['happy'] },
 ];
 
 function createMeme(imgId) {
+
     var meme = {
         selectedImgId: imgId,
         selectedLineIdx: 0,
@@ -40,6 +41,39 @@ function createMeme(imgId) {
     }
     gMeme = meme;
     saveMemeToStorage()
+}
+
+function addLine(txt) {
+    if (!gMeme.lines.length) {
+        var line = {
+            txt: '',
+            size: 20,
+            font: 'Impact',
+            align: 'left',
+            color: 'white',
+            stroke: 'black',
+            pos: { posX: 50, posY: 50 }
+        }
+    } else {
+        line = {
+            txt: '',
+            size: 20,
+            font: 'Impact',
+            align: 'left',
+            color: 'white',
+            stroke: 'black',
+            pos: { posX: 50, posY: 400 }
+        }
+    }
+    gMeme.lines.push(line);
+    gMeme.selectedLineIdx++
+        saveMemeToStorage();
+}
+
+function removeLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    gMeme.selectedLineIdx--
+        saveMemeToStorage();
 }
 
 function moveLineX(align) {
@@ -76,7 +110,6 @@ function changeFontSize(size) {
 
 function moveLineY(posY) {
     gMeme.lines[gMeme.selectedLineIdx].pos.posY += posY;
-
     saveMemeToStorage()
 }
 

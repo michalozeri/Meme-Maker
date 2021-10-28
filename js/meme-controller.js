@@ -29,9 +29,9 @@ function renderImgGallery() {
 
 function onCreateMeme(imgId) {
     createMeme(imgId)
-    document.querySelector('.main-container').hidden = false
-    document.querySelector('.menu-container').hidden = false
-    document.querySelector('.images-gallery').hidden = true
+    document.querySelector('.main-container').style.display = 'flex'
+        // document.querySelector('.menu-container').hidden = false
+    document.querySelector('.images-gallery').style.display = 'none'
     renderCanvas();
 }
 
@@ -40,16 +40,31 @@ function drawImgFromlocal(imgId) {
     var img = new Image()
     img.src = `memes-imgs/${imgId}.jpg`;
     img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height) //img,x,y,xend,yend
+        gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         meme.lines.forEach((line) => {
             var txt = line.txt;
+            var font = line.font
+            var stroke = line.stroke
+            var color = line.color
             var size = line.size;
             var x = line.pos.posX;
             var y = line.pos.posY;
-
-            onDrawText(txt, size, x, y);
+            onDrawText(txt, font, stroke, color, size, x, y);
         })
     }
+}
+
+function onAddLine() {
+    var elTxt = document.querySelector('[name="text"]');
+    elTxt.value = ''
+    var txt = document.querySelector('[name="text"]')
+    addLine(txt);
+    renderCanvas()
+}
+
+function onRemoveLine() {
+    removeLine();
+    renderCanvas();
 }
 
 function onChangeFont(fontType) {
@@ -93,11 +108,8 @@ function onMoveLineY(diff) {
     renderCanvas();
 }
 
-function onDrawText(txt, size, x, y) {
-    var meme = getMemeForDisplay()
-    var stroke = meme.lines[meme.selectedLineIdx].stroke
-    var color = meme.lines[meme.selectedLineIdx].color
-    var font = meme.lines[meme.selectedLineIdx].font
+function onDrawText(txt, font, stroke, color, size, x, y) {
+
     gCtx.lineWidth = 1;
     gCtx.strokeStyle = stroke;
     gCtx.fillStyle = color;
