@@ -10,43 +10,58 @@
 </head>
 
 <body onload="onInit()">
-    <section class="images-gallery"></section>
+    <header class="main-header">
+        <div class="header-container main-layout flex space-between">
+            <div class="logo justify-center align-center flex">Meme Maker</div>
+            <ul class="nav-bar flex clean-list">
+                <li><a href="">Gallery</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="main-gallery">
+        <div class="filter-area flex">
+            <input type="search" name="gallery-search" placeholder="Search">
+            <div class="filter-by"><span class="big">Funny</span> <span>Animal</span> <span class="big">Man</span> <span class="big">Woman</span> <span>Comic</span> <span class="big">Smile</span></div>
+            <button class="btn-more">More</button>
+        </div>
+        <section class="images-gallery"></section>
+    </main>
     <main class="main-container">
         <section class="canvas-container">
             <canvas class="my-canvas" height="450px" width="450px"></canvas>
         </section>
         <section class="menu-container">
-            <input name="text" type="text" placeholder="Add Text" oninput="onUpdateTxt(this)">
+            <input class="txt-input" name="text" type="text" placeholder="Add Text Here" oninput="onUpdateTxt(this)">
             <div class="line-tools">
-                <button onclick="onMoveLineY(+10)">⬇</button>
-                <button onclick="onMoveLineY(-10)">⬆</button>
-                <button onclick="onAddLine()">➕</button>
-                <button onclick="onRemoveLine()">🚮</button>
+                <button class="btn-tools margin-10" onclick="onMoveLineY(+10)">⬇</button>
+                <button class="btn-tools margin-10" onclick="onMoveLineY(-10)">⬆</button>
+                <button class="btn-tools margin-10" onclick="onAddLine()">➕</button>
+                <button class="btn-tools margin-10" onclick="onRemoveLine()">🚮</button>
             </div>
             <div class="font-tools">
-                <div>
-                    <button onclick="onChangeFontSize(+2)">A+</button>
-                    <BUtton onclick="onChangeFontSize(-2)">A-</BUtton>
-                    <button onclick="onMoveLineX('left')">L</button>
-                    <button onclick="onMoveLineX('center')">C</button>
-                    <button onclick="onMoveLineX('right')">R</button>
+                <div class="font-row">
+                    <button class="btn-tools" onclick="onChangeFontSize(+2)">A+</button>
+                    <BUtton class="btn-tools" onclick="onChangeFontSize(-2)">A-</BUtton>
+                    <button class="btn-tools" onclick="onMoveLineX('left')">L</button>
+                    <button class="btn-tools" onclick="onMoveLineX('center')">C</button>
+                    <button class="btn-tools" onclick="onMoveLineX('right')">R</button>
                 </div>
-                <div>
+                <div class="font-row">
                     <select onchange="onChangeFont(this.value)">
-                    <option value="IMPACT">Impact</option>
-                    <option value="ARIEL">Ariel</option>
-                    <option value="MONOSPACE">monospace</option>
-                    <option value="VERDANA">Verdana</option>
-                    <option value="COURIER NEW">Courier New</option>
-                    Courier New
-                </select>
+                        <option value="IMPACT">Impact</option>
+                        <option value="ARIEL">Ariel</option>
+                        <option value="MONOSPACE">monospace</option>
+                        <option value="VERDANA">Verdana</option>
+                        <option value="COURIER NEW">Courier New</option>
+                    </select>
                     <input oninput="onChangeStrokeColor()" type="color" name="stroke-color" placeholder="Strok Color">
                     <input oninput="onChangeFontColor()" type="color" name="font-color" placeholder="Font Color">
                 </div>
             </div>
             <div>
-                <button>Share</button>
-                <button>Download</button>
+                <button class="btn-share">Share</button>
+                <button class="btn-share">Download</button>
             </div>
         </section>
     </main>

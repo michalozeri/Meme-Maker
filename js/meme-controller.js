@@ -30,7 +30,8 @@ function renderImgGallery() {
 function onCreateMeme(imgId) {
     createMeme(imgId)
     document.querySelector('.main-container').style.display = 'flex'
-        // document.querySelector('.menu-container').hidden = false
+    document.querySelector('.main-gallery').style.backgroundColor = '#22252c'
+    document.querySelector('.filter-area').style.display = 'none'
     document.querySelector('.images-gallery').style.display = 'none'
     renderCanvas();
 }
@@ -63,6 +64,8 @@ function onAddLine() {
 }
 
 function onRemoveLine() {
+    var elTxt = document.querySelector('[name="text"]');
+    elTxt.value = ''
     removeLine();
     renderCanvas();
 }
