@@ -59,16 +59,20 @@
                     <input oninput="onChangeFontColor()" type="color" name="font-color" placeholder="Font Color">
                 </div>
             </div>
-            <div>
-                <button class="btn-share">Share</button>
-                <button class="btn-share">Download</button>
+            <div class="img-extras">
+                <div class="share">
+                    <button class="btn-save margin" onclick="onUploadToShare()">Save To Share</button>
+                    <button class="btn-share margin">Share</button>
+                    <button class="btn-download "><a href="# " class="btn " onclick="onDownloadImg(this) " download="image.jpg ">Download</a></button>
+                </div>
+                <input class="upload" type="file" class="file-input btn" name="image" onchange="onUploadFromDesk(event)" />
             </div>
         </section>
     </main>
 
-    <script src="js/services/storage-service.js"></script>
-    <script src="js/services/meme-servic.js"></script>
-    <script src="js/meme-controller.js"></script>
+    <script src="js/services/storage-service.js "></script>
+    <script src="js/services/meme-servic.js "></script>
+    <script src="js/meme-controller.js "></script>
 </body>
 
 </html>

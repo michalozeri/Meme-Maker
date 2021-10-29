@@ -29,6 +29,7 @@ function createMeme(imgId) {
     var meme = {
         selectedImgId: imgId,
         selectedLineIdx: 0,
+        isDrag: false,
         lines: [{
             txt: '',
             size: 20,
@@ -36,15 +37,30 @@ function createMeme(imgId) {
             align: 'left',
             color: 'white',
             stroke: 'black',
-            pos: { posX: 50, posY: 50 }
+            pos: { posX: 50, posY: 50 },
         }]
     }
     gMeme = meme;
     saveMemeToStorage()
 }
 
+function setMemeDrag(isDrag) {
+    gMeme.isDrag = isDrag
+    saveMemeToStorage()
+}
+
+function moveMeme(dx, dy) {
+    gMeme.lines[gMeme.selectedLineIdx].pos.posX += dx;
+    gMeme.lines[gMeme.selectedLineIdx].pos.posY += dy;
+    saveMemeToStorage()
+
+}
+
 function addLine(txt) {
+    if (gMeme.selectedLineIdx >= 2) return
+    if (!txt) return
     if (!gMeme.lines.length) {
+        // var line = gMeme.lines[0];
         var line = {
             txt: '',
             size: 20,
@@ -64,16 +80,21 @@ function addLine(txt) {
             stroke: 'black',
             pos: { posX: 50, posY: 400 }
         }
+        if (gMeme.lines.length === 2) line.pos = { posX: 50, posY: 200 };
     }
     gMeme.lines.push(line);
     gMeme.selectedLineIdx++
-        saveMemeToStorage();
+        console.log(gMeme.selectedLineIdx);
+    saveMemeToStorage();
 }
 
 function removeLine() {
+    if (gMeme.selectedLineIdx <= -1) return
+    if (!gMeme.lines[gMeme.selectedLineIdx].txt) return
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)
     gMeme.selectedLineIdx--
-        saveMemeToStorage();
+        console.log(gMeme.selectedLineIdx);
+    saveMemeToStorage();
 }
 
 function moveLineX(align) {
@@ -114,6 +135,7 @@ function moveLineY(posY) {
 }
 
 function updateTxt(txt) {
+    if (!gMeme.lines.length) addLine();
     gMeme.lines[gMeme.selectedLineIdx].txt = txt;
     saveMemeToStorage()
 }
