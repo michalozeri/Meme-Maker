@@ -71,10 +71,27 @@ body {
 
 .main-gallery {
     max-width: 1240px;
+    max-height: 450px;
+    overflow-y: auto;
     margin: auto;
     background-color: #383b42;
     padding: 25px;
     border-radius: 10px;
+}
+
+.main-gallery::-webkit-scrollbar {
+    width: 10px;
+}
+
+.main-gallery::-webkit-scrollbar-track {
+    background-color: #22252c;
+    border-radius: 5px;
+}
+
+.main-gallery::-webkit-scrollbar-thumb {
+    background: linear-gradient(to left, #30bb72, #0f9bb3);
+    border-radius: 5px;
+    height: 5px;
 }
 
 .filter-area input {
@@ -130,6 +147,17 @@ img:hover {
     border-radius: 50%;
 }
 
+footer {
+    background: linear-gradient(to left, #30bb72, #0f9bb3);
+    height: 30px;
+    max-width: 1255px;
+    margin: 15px 10px;
+    border-radius: 50px;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
 .main-container {
     display: none;
     gap: 30px;
@@ -150,8 +178,7 @@ img:hover {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 450px;
-    height: 450px;
+    height: 460px;
     flex-basis: 50%;
     background-color: #393d48;
     border-radius: 20px;
@@ -194,7 +221,7 @@ select {
 .font-tools .font-row {
     display: flex;
     justify-content: space-evenly;
-    padding: 10px 15px 10px;
+    padding: 7.5px 15px 10px;
 }
 
 .font-tools .font-selection {
@@ -202,7 +229,7 @@ select {
     height: 40px;
 }
 
-.stroke-color button {
+.stroke-color span {
     text-decoration: underline;
     font-weight: bolder;
 }
@@ -221,16 +248,88 @@ select {
     color: #fefefe;
 }
 
+.img-extras a {
+    text-decoration: none;
+    color: #3d3d3d;
+}
+
+
+/* BUTTONS */
+
+.line-tools button {
+    color: #fefefe;
+    font-size: 1.5rem;
+    border: none;
+}
+
+.line-tools .switch {
+    background: linear-gradient(to bottom, #aa34d9, #77168a);
+    border: outset 5px #aa34d9;
+}
+
+.line-tools .switch:hover {
+    background: linear-gradient(to bottom, #c573e6, #7f2e8f);
+    border: outset 5px #c573e6;
+}
+
+.line-tools .line-up {
+    background: linear-gradient(to bottom, #65dff5, #258bba);
+    border: outset 5px #65dff5;
+}
+
+.line-tools .line-up:hover {
+    background: linear-gradient(to bottom, #aaecf8, #4894b8);
+    border: outset 5px #aaecf8;
+}
+
+.line-tools .line-down {
+    background: linear-gradient(to bottom, #65dff5, #258bba);
+    border: outset 5px #65dff5;
+}
+
+.line-tools .line-down:hover {
+    background: linear-gradient(to bottom, #aaecf8, #4894b8);
+    border: outset 5px #aaecf8;
+}
+
+.line-tools .add-line {
+    background: linear-gradient(to bottom, #63f779, #24a146);
+    border: outset 5px #63f779;
+}
+
+.line-tools .add-line:hover {
+    background: linear-gradient(to bottom, #9ef8ac, #53a368);
+    border: outset 5px #9ef8ac;
+}
+
+.line-tools .remove-line {
+    background: linear-gradient(to bottom, #f24646, #ab2020);
+    border: outset 5px #f24646;
+}
+
+.line-tools .remove-line:hover {
+    background: linear-gradient(to bottom, #f88585, #b14b4b);
+    border: outset 5px #f88585;
+}
+
+.font-tools .font-row button {
+    color: #22252c;
+    background-color: #ffff;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.font-tools select,
+span,
+input {
+    font-size: 1.3rem;
+}
+
 .btn-save,
 .btn-share,
 .btn-download {
     width: 120px;
     height: 50px;
-}
-
-.img-extras a {
-    text-decoration: none;
-    color: #3d3d3d;
 }
 
 

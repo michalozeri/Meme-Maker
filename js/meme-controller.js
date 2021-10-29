@@ -30,16 +30,18 @@ function renderImgGallery() {
 
     document.querySelector('.images-gallery').style.display = 'grid';
     document.querySelector('.filter-area').style.display = 'flex'
-    document.querySelector('.main-gallery').style.backgroundColor = '#383b42'
+    document.querySelector('footer').style.display = 'block';
+    document.querySelector('.main-gallery').style.display = "block"
     document.querySelector('.main-container').style.display = 'none';
 }
 
 function onCreateMeme(imgId) {
     createMeme(imgId)
     document.querySelector('.main-container').style.display = 'flex'
-    document.querySelector('.main-gallery').style.backgroundColor = '#22252c'
+    document.querySelector('.main-gallery').style.display = 'none'
     document.querySelector('.filter-area').style.display = 'none'
     document.querySelector('.images-gallery').style.display = 'none'
+    document.querySelector('footer').style.display = 'none';
     renderCanvas();
     addListeners()
 }
@@ -137,10 +139,6 @@ function onMoveLineY(diff) {
 
     moveLineY(diff)
     renderCanvas();
-}
-
-function onOpenGallery() {
-    renderImgGallery();
 }
 
 function onDrawText(txt, font, stroke, color, size, x, y) {
