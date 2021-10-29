@@ -97,13 +97,23 @@ function removeLine() {
     saveMemeToStorage();
 }
 
+function switchLine() {
+    if (gMeme.lines.length <= 1) return;
+    if (gMeme.selectedLineIdx === gMeme.lines.length - 1) {
+        gMeme.selectedLineIdx = 0
+    } else {
+        gMeme.selectedLineIdx++
+    }
+    saveMemeToStorage();
+}
+
 function moveLineX(align) {
     if (align === 'left') {
         gMeme.lines[gMeme.selectedLineIdx].pos.posX = 10;
     } else if (align === 'center') {
-        gMeme.lines[gMeme.selectedLineIdx].pos.posX = 150;
+        gMeme.lines[gMeme.selectedLineIdx].pos.posX = 180;
     } else if (align === 'right') {
-        gMeme.lines[gMeme.selectedLineIdx].pos.posX = 280;
+        gMeme.lines[gMeme.selectedLineIdx].pos.posX = 350;
     }
     gMeme.lines[gMeme.selectedLineIdx].align = align
     saveMemeToStorage()

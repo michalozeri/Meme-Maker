@@ -27,26 +27,41 @@ body {
 
 .main-header .header-container {
     max-width: 1000px;
+    padding: 0 20px;
     margin: auto;
 }
 
 .main-header .logo {
-    font-size: 1.375rem;
+    font-size: 1.45rem;
     line-height: 0.845;
+}
+
+.nav-bar ul {
+    margin: auto;
 }
 
 .nav-bar li {
     margin-inline-end: 70px;
+    text-align: center;
 }
 
-.nav-bar a {
-    text-decoration: none;
+.nav-bar .btn-gallery,
+.btn-about {
+    border: none;
+    background-color: inherit;
+    font-family: inherit;
+}
+
+.nav-bar .btn-about,
+.btn-gallery {
+    font-size: 1.25rem;
     color: #fefefe;
-    justify-content: center;
-    padding: 10px 25px;
+    width: 120px;
+    height: 40px;
 }
 
-.nav-bar a:hover {
+.nav-bar .btn-gallery:hover,
+.btn-about:hover {
     width: 120px;
     height: 40px;
     background-color: #fefefe;
@@ -96,7 +111,7 @@ body {
     color: #fefefe;
 }
 
-.images-gallery {
+.main-gallery .images-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     grid-auto-rows: 180px;
@@ -185,6 +200,11 @@ select {
 .font-tools .font-selection {
     width: 235px;
     height: 40px;
+}
+
+.stroke-color button {
+    text-decoration: underline;
+    font-weight: bolder;
 }
 
 .img-extras {
