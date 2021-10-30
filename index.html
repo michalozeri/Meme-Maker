@@ -15,13 +15,15 @@
         <div class="header-container flex space-between">
             <div class="logo justify-center align-center flex">Meme Maker</div>
             <ul class="nav-bar flex clean-list">
+                <button class="btn-close" onclick="closeMenu()">✖</button>
                 <li><button class="btn-gallery" onclick="renderImgGallery()"> Gallery</button></li>
-                <li><button class="btn-about">About</button> </li>
+                <li><button class="btn-about">About</button></li>
             </ul>
+            <button class="btn-open" onclick="openMenu(this)">☰</button>
         </div>
     </header>
     <main class="main-gallery">
-        <div class="filter-area flex">
+        <div class="filter-area">
             <div class="filter-input flex">
                 <input type="search" name="gallery-search" placeholder="Search">
             </div>
@@ -32,7 +34,7 @@
                     <span onclick="onChangeSpanSize(this)">Man</span>
                     <span onclick="onChangeSpanSize(this)">Woman</span>
                     <span onclick="onChangeSpanSize(this)">Comic</span>
-                    <span onclick="onChangeSpanSize(this)">smile</span>
+                    <span onclick="onChangeSpanSize(this)">Smile</span>
                 </div>
                 <button class="btn-more">More</button>
             </div>

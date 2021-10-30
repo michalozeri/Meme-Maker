@@ -148,6 +148,16 @@ function onMoveLineY(diff) {
     renderCanvas();
 }
 
+function openMenu(elBtn) {
+    document.body.classList.add('menu-open')
+    elBtn.style.display = 'none'
+}
+
+function closeMenu() {
+    document.body.classList.remove('menu-open')
+    document.querySelector('.btn-open').style.display = 'block'
+}
+
 function onDrawText(txt, font, stroke, color, size, x, y) {
 
     gCtx.lineWidth = 1;

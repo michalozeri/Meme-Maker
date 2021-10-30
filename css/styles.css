@@ -133,7 +133,7 @@ body {
 }
 
 .filter-area .btn-more {
-    background: linear-gradient(to left, #30bb72, #0f9bb3);
+    background-color: #30bb72;
     border-radius: 50px;
     border: none;
     height: 35px;
@@ -175,15 +175,17 @@ footer {
 
 .main-container {
     display: none;
-    gap: 30px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.main-container .canvas-container .my-canvas {
+.main-container .canvas-container {
+    margin: auto;
+}
+
+.canvas-container .my-canvas {
     margin: 0 auto;
     border: 5px solid #393d48;
     border-radius: 20px;
-    flex-basis: 50%;
 }
 
 .main-container .menu-container {
@@ -191,11 +193,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 460px;
     background-color: #393d48;
     border-radius: 20px;
     padding: 10px;
+    margin: auto;
 }
 
 .menu-container .txt-input {
@@ -276,6 +279,18 @@ select {
 
 
 /* BUTTONS */
+
+.header-container .btn-open,
+.header-container .btn-close {
+    display: none;
+}
+
+.header-container .btn-open {
+    background-color: #30bb72;
+    color: #30bb72;
+    height: 35px;
+    border: none;
+}
 
 .line-tools button {
     color: #fefefe;
@@ -442,7 +457,50 @@ span {
     justify-content: center;
 }
 
-@media (max-width:500px) {
+@media (max-width:929px) {
+    .nav-bar .btn-about,
+    .btn-gallery {
+        font-size: 1rem;
+    }
+    .filter-by span {
+        font-size: 0.5rem;
+    }
+    .header-container .btn-close,
+    .header-container .btn-open {
+        display: none;
+    }
+    .main-container {
+        flex-direction: column;
+        max-width: 90vw;
+        margin: auto;
+        gap: 10px;
+    }
+    .main-gallery .images-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-auto-rows: 180px;
+        gap: 8px;
+    }
+    .images-gallery img {
+        width: 180px;
+        height: 180px;
+    }
+    .header-container .btn-open {
+        background-color: #30bb72;
+        color: #30bb72;
+        height: 35px;
+        border: none;
+    }
+}
+
+@media (max-width:480px) {
+    .main-header .header-container {
+        max-width: 80vw;
+        padding: 15px 0;
+    }
+    .header-container .logo {
+        font-size: 1.3rem;
+        width: 30vw;
+    }
     .filter-area {
         display: flex;
         flex-direction: column;
@@ -459,6 +517,7 @@ span {
         height: 30px;
         margin: 0;
         margin-right: 5px;
+        max-width: 60vw;
     }
     .filter-by span {
         font-size: 0.5rem;
@@ -468,12 +527,97 @@ span {
         margin: 0;
         height: 30px;
     }
+    .main-container {
+        flex-direction: column;
+        max-width: 90vw;
+        margin: auto;
+        gap: 10px;
+    }
     .main-gallery .images-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        grid-auto-rows: 150px;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-auto-rows: 120px;
+        gap: 2px;
     }
     .images-gallery img {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
+    }
+    .nav-bar {
+        position: fixed;
+        justify-content: space-evenly;
+        right: 0;
+        top: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        width: 35vw;
+        background-color: #22252cce;
+        transform: translateX(100%);
+        transition: transform 0.6s;
+    }
+    .nav-bar li {
+        margin: autu;
+    }
+    body.menu-open .nav-bar {
+        transform: translateX(0);
+    }
+    .header-container .btn-close {
+        display: block;
+        position: absolute;
+        width: 20px;
+        right: 20%;
+        top: 3%;
+        background-color: rgba(34, 34, 34, 0);
+        color: rgb(241, 234, 234);
+        font-size: 1.5rem;
+        border: none;
+    }
+    .header-container .btn-open {
+        display: block;
+        font-size: 1.5rem;
+        color: #30bb72;
+        background-color: #fefefe;
+        border-radius: 50%;
+        border: none;
+    }
+    .main-container {
+        flex-direction: column;
+        max-width: 90vw;
+        margin: auto;
+        gap: 10px;
+    }
+    .my-canvas {
+        height: 300px;
+        width: 300px;
+    }
+    .menu-container .txt-input {
+        width: 70vw;
+    }
+    .menu-container .line-tools {
+        width: 90vw;
+        margin: 10px 0;
+    }
+    .btn-tools button {
+        width: 5vh;
+        margin: 0 5px;
+    }
+    .menu-container .font-tools {
+        width: 85vw;
+        height: 25vh;
+        margin-top: 35px;
+    }
+    .font-tools select {
+        height: 5vh;
+        margin-right: 10px;
+        font-size: 1rem;
+    }
+    .img-extras .btn-save,
+    .btn-share,
+    .btn-download {
+        width: 20vw;
+    }
+    .img-extras span {
+        font-size: 0.9rem;
     }
 }
