@@ -6,6 +6,7 @@ function onUploadToShare() {
     function onSuccess(uploadedImgUrl) {
         const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
 
+        document.querySelector('.btn-share').style.fontSize = 1.45 + 'rem'
         document.querySelector('.btn-share').innerHTML = `
         <a  href="https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">  
         Share</a>`

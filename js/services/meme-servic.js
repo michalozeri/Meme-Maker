@@ -84,8 +84,7 @@ function addLine(txt) {
     }
     gMeme.lines.push(line);
     gMeme.selectedLineIdx++
-        console.log(gMeme.selectedLineIdx);
-    saveMemeToStorage();
+        saveMemeToStorage();
 }
 
 function removeLine() {
@@ -93,8 +92,7 @@ function removeLine() {
     if (!gMeme.lines[gMeme.selectedLineIdx].txt) return
     gMeme.lines.splice(gMeme.selectedLineIdx, 1)
     gMeme.selectedLineIdx--
-        console.log(gMeme.selectedLineIdx);
-    saveMemeToStorage();
+        saveMemeToStorage();
 }
 
 function switchLine() {

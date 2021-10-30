@@ -24,7 +24,7 @@ function renderImgGallery() {
     console.log(images);
 
     const strHtml = images.map((image) => {
-        return `<img src="memes-imgs/${image.url}" alt="" onclick="onCreateMeme(${image.id})"></img>`
+        return `<img src="img/${image.url}" alt="" onclick="onCreateMeme(${image.id})"></img>`
     })
     document.querySelector('.images-gallery').innerHTML = strHtml.join('')
 
@@ -49,7 +49,7 @@ function onCreateMeme(imgId) {
 function drawImgFromlocal(imgId) {
     var meme = getMemeForDisplay()
     var img = new Image()
-    img.src = `memes-imgs/${imgId}.jpg`;
+    img.src = `img/${imgId}.jpg`;
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         meme.lines.forEach((line) => {
@@ -78,6 +78,14 @@ function onSwitchLine() {
     document.querySelector('[placeholder="Add Text Here"]').value = txt
 
     renderCanvas();
+}
+
+function onChangeSpanSize(elSpan) {
+
+    var elSpans = document.querySelectorAll('.filter-by span');
+    elSpans.forEach((elSpan) => {
+        elSpan.style.fontSize++
+    })
 }
 
 
@@ -126,7 +134,6 @@ function onChangeStrokeColor() {
 
 function onChangeFontSize(diff) {
     changeFontSize(diff)
-    console.log(diff);
     renderCanvas();
 }
 

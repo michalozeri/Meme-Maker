@@ -23,7 +23,13 @@
     <main class="main-gallery">
         <div class="filter-area flex">
             <input type="search" name="gallery-search" placeholder="Search">
-            <div class="filter-by"><span class="big">Funny</span> <span>Animal</span> <span class="big">Man</span> <span class="big">Woman</span> <span>Comic</span> <span class="big">Smile</span></div>
+            <div class="filter-by">
+                <span onclick="onChangeSpanSize(this)">Funny</span>
+                <span onclick="onChangeSpanSize(this)">Animal</span>
+                <span onclick="onChangeSpanSize(this)">Man</span>
+                <span onclick="onChangeSpanSize(this)">Woman</span>
+                <span onclick="onChangeSpanSize(this)">Comic</span>
+                <span onclick="onChangeSpanSize(this)">smile</span></div>
             <button class="btn-more">More</button>
         </div>
         <main class="gallery">
@@ -72,9 +78,9 @@
             </div>
             <div class="img-extras">
                 <div class="share">
-                    <button class="btn-save margin" onclick="onUploadToShare()">Save To Share</button>
-                    <button class="btn-share margin"> <i class="fas fa-share-alt"><span>Share</span></i></button>
-                    <button class="btn-download "><a href="# " class="btn " onclick="onDownloadImg(this) " download="image.jpg "><i class="fas fa-download"><span>Download</span></i></a></button>
+                    <button class="btn-save" onclick="onUploadToShare()">Save To Share</button>
+                    <button class="btn-share"> <i class="fas fa-share-alt"></i><span>Share</span></button>
+                    <button class="btn-download "><a href="# " class="btn " onclick="onDownloadImg(this) " download="image.jpg "><i class="fas fa-download"></i><span>Download</span></a></button>
                 </div>
                 <input class="upload" type="file" class="file-input btn" name="image" onchange="onUploadFromDesk(event)" />
             </div>

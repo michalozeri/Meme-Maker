@@ -1,6 +1,11 @@
 @font-face {
-    font-family: Poppins;
+    font-family: Poppins-Medium;
     src: url(/fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: url(/fonts/Poppins-Light.ttf);
 }
 
 * {
@@ -9,7 +14,7 @@
 
 html {
     background-color: #22252c;
-    font-family: Poppins;
+    font-family: Poppins-Medium;
     color: #fefefe;
 }
 
@@ -34,6 +39,7 @@ body {
 .main-header .logo {
     font-size: 1.45rem;
     line-height: 0.845;
+    font-family: Poppins-Light;
 }
 
 .nav-bar ul {
@@ -118,6 +124,11 @@ body {
     margin: 0 15px;
 }
 
+.filter-by span {
+    font-family: Poppins-Light;
+    font-size: 1rem;
+}
+
 .filter-area .btn-more {
     background: linear-gradient(to left, #30bb72, #0f9bb3);
     border-radius: 50px;
@@ -126,6 +137,7 @@ body {
     height: 35px;
     margin-top: 10px;
     color: #fefefe;
+    font-family: Poppins-Light;
 }
 
 .main-gallery .images-gallery {
@@ -179,10 +191,8 @@ footer {
     align-items: center;
     justify-content: space-between;
     height: 460px;
-    flex-basis: 50%;
     background-color: #393d48;
     border-radius: 20px;
-    padding: 25px 40px;
     padding: 10px;
 }
 
@@ -195,6 +205,7 @@ footer {
     color: #3d3d3d;
     text-align: center;
     font-size: 1.562rem;
+    border: outset 5px white;
 }
 
 .menu-container button,
@@ -202,10 +213,11 @@ input,
 select {
     border-radius: 10px;
     font-family: inherit;
+    text-align: center;
 }
 
 .menu-container .line-tools {
-    margin: 15px 0;
+    margin: 15px 0 30px;
 }
 
 .menu-container .font-tools {
@@ -221,7 +233,7 @@ select {
 .font-tools .font-row {
     display: flex;
     justify-content: space-evenly;
-    padding: 7.5px 15px 10px;
+    padding: 7.5px 15px 5px;
 }
 
 .font-tools .font-selection {
@@ -234,23 +246,30 @@ select {
     font-weight: bolder;
 }
 
-.img-extras {
-    margin: auto;
+.row2 span {
+    font-size: 1.5rem;
+    color: #22252c
+}
+
+.row2 input {
+    height: 30px;
+    width: 60px;
 }
 
 .img-extras .share {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .img-extras .upload {
-    margin: 10px 0;
+    margin: 10px 80px 0;
     background-color: #22252c;
     color: #fefefe;
 }
 
 .img-extras a {
     text-decoration: none;
-    color: #3d3d3d;
+    color: #22252c;
 }
 
 
@@ -312,6 +331,36 @@ select {
     border: outset 5px #f88585;
 }
 
+.share .btn-save {
+    background: linear-gradient(to bottom, #b1c1ee, #6fa9e7);
+    border: outset 5px #a3baff;
+}
+
+.share .btn-save:hover {
+    background: linear-gradient(to bottom, #cdd7f1, #90bbe9);
+    border: outset 5px #cdd7f1;
+}
+
+.share .btn-share {
+    background: linear-gradient(to bottom, #f5accd, #ec70ac);
+    border: outset 5px #f5accd;
+}
+
+.share .btn-share:hover {
+    background: linear-gradient(to bottom, #facae0, #f598c5);
+    border: outset 5px #facae0;
+}
+
+.share .btn-download {
+    background: linear-gradient(to bottom, #f2bdf7, #e776e7);
+    border: outset 5px #f3a3fa;
+}
+
+.share .btn-download:hover {
+    background: linear-gradient(to bottom, #f4dbf7, #e491e4);
+    border: outset 5px #f4dbf7;
+}
+
 .font-tools .font-row button {
     color: #22252c;
     background-color: #ffff;
@@ -320,16 +369,17 @@ select {
 }
 
 .font-tools select,
-span,
-input {
+span {
     font-size: 1.3rem;
 }
 
 .btn-save,
 .btn-share,
 .btn-download {
-    width: 120px;
+    width: 140px;
     height: 50px;
+    color: #22252c;
+    margin: 0 5px;
 }
 
 
