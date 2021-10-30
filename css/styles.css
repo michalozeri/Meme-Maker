@@ -1,11 +1,11 @@
 @font-face {
     font-family: Poppins-Medium;
-    src: url(/fonts/Poppins-Medium.ttf);
+    src: url(../fonts/Poppins-Medium.ttf);
 }
 
 @font-face {
     font-family: Poppins-Light;
-    src: url(/fonts/Poppins-Light.ttf);
+    src: url(../fonts/Poppins-Light.ttf);
 }
 
 * {
@@ -587,9 +587,13 @@ span {
         margin: auto;
         gap: 10px;
     }
+    .main-container .menu-container {
+        margin: auto;
+    }
     .my-canvas {
         height: 300px;
         width: 300px;
+        margin: auto;
     }
     .menu-container .txt-input {
         width: 70vw;
