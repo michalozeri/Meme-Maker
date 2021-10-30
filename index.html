@@ -12,7 +12,7 @@
 
 <body onload="onInit()">
     <header class="main-header">
-        <div class="header-container main-layout flex space-between">
+        <div class="header-container flex space-between">
             <div class="logo justify-center align-center flex">Meme Maker</div>
             <ul class="nav-bar flex clean-list">
                 <li><button class="btn-gallery" onclick="renderImgGallery()"> Gallery</button></li>
@@ -22,15 +22,20 @@
     </header>
     <main class="main-gallery">
         <div class="filter-area flex">
-            <input type="search" name="gallery-search" placeholder="Search">
-            <div class="filter-by">
-                <span onclick="onChangeSpanSize(this)">Funny</span>
-                <span onclick="onChangeSpanSize(this)">Animal</span>
-                <span onclick="onChangeSpanSize(this)">Man</span>
-                <span onclick="onChangeSpanSize(this)">Woman</span>
-                <span onclick="onChangeSpanSize(this)">Comic</span>
-                <span onclick="onChangeSpanSize(this)">smile</span></div>
-            <button class="btn-more">More</button>
+            <div class="filter-input flex">
+                <input type="search" name="gallery-search" placeholder="Search">
+            </div>
+            <div class="filter-row flex">
+                <div class="filter-by">
+                    <span onclick="onChangeSpanSize(this)">Funny</span>
+                    <span onclick="onChangeSpanSize(this)">Animal</span>
+                    <span onclick="onChangeSpanSize(this)">Man</span>
+                    <span onclick="onChangeSpanSize(this)">Woman</span>
+                    <span onclick="onChangeSpanSize(this)">Comic</span>
+                    <span onclick="onChangeSpanSize(this)">smile</span>
+                </div>
+                <button class="btn-more">More</button>
+            </div>
         </div>
         <main class="gallery">
             <div class="images-gallery"> </div>
@@ -45,17 +50,21 @@
             <input class="txt-input" name="text" type="text" placeholder="Add Text Here" oninput="onUpdateTxt(this)">
             <div class="line-tools">
                 <button class="btn-tools margin-10 switch" onclick="onSwitchLine()">⬇⬆</button>
-                <button class="btn-tools margin-10 line-up" onclick="onMoveLineY(+10)"><i class="fas fa-long-arrow-alt-down"></i></button>
-                <button class="btn-tools margin-10 line-down" onclick="onMoveLineY(-10)"><i class="fas fa-long-arrow-alt-up"></i></button>
+                <button class="btn-tools margin-10 line-up" onclick="onMoveLineY(+10)"><i
+                        class="fas fa-long-arrow-alt-down"></i></button>
+                <button class="btn-tools margin-10 line-down" onclick="onMoveLineY(-10)"><i
+                        class="fas fa-long-arrow-alt-up"></i></button>
                 <button class="btn-tools margin-10 add-line" onclick="onAddLine()"><i class="fas fa-plus"></i></button>
-                <button class="btn-tools margin-10 remove-line" onclick="onRemoveLine()"><i class="fas fa-trash"></i></button>
+                <button class="btn-tools margin-10 remove-line" onclick="onRemoveLine()"><i
+                        class="fas fa-trash"></i></button>
             </div>
             <div class="font-tools">
                 <div class="font-row row1">
                     <button class="btn-tools increase-font" onclick="onChangeFontSize(+2)">A+</button>
                     <BUtton class="btn-tools decrease-font" onclick="onChangeFontSize(-2)">A-</BUtton>
                     <button class="btn-tools" onclick="onMoveLineX('left')"><i class="fas fa-align-left"></i></button>
-                    <button class="btn-tools" onclick="onMoveLineX('center')"><i class="fas fa-align-center"></i></button>
+                    <button class="btn-tools" onclick="onMoveLineX('center')"><i
+                            class="fas fa-align-center"></i></button>
                     <button class="btn-tools" onclick="onMoveLineX('right')"><i class="fas fa-align-right"></i></button>
                 </div>
                 <div class="font-row row2">
@@ -80,7 +89,8 @@
                 <div class="share">
                     <button class="btn-save" onclick="onUploadToShare()">Save To Share</button>
                     <button class="btn-share"> <i class="fas fa-share-alt"></i><span>Share</span></button>
-                    <button class="btn-download "><a href="# " class="btn " onclick="onDownloadImg(this) " download="image.jpg "><i class="fas fa-download"></i><span>Download</span></a></button>
+                    <button class="btn-download "><a href="# " class="btn " onclick="onDownloadImg(this) "
+                            download="image.jpg "><i class="fas fa-download"></i><span>Download</span></a></button>
                 </div>
                 <input class="upload" type="file" class="file-input btn" name="image" onchange="onUploadFromDesk(event)" />
             </div>

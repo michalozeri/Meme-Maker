@@ -60,7 +60,6 @@ function addLine(txt) {
     if (gMeme.selectedLineIdx >= 2) return
     if (!txt) return
     if (!gMeme.lines.length) {
-        // var line = gMeme.lines[0];
         var line = {
             txt: '',
             size: 20,
