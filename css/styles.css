@@ -492,13 +492,17 @@ span {
     }
 }
 
-@media (max-width:480px) {
+@media (max-width:600px) {
+    .main-header {
+        margin: 15 auto 10px;
+        height: 45px;
+        padding-top: 5px
+    }
     .main-header .header-container {
         max-width: 80vw;
-        padding: 15px 0;
     }
     .header-container .logo {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         width: 30vw;
     }
     .filter-area {
@@ -589,27 +593,35 @@ span {
     }
     .main-container .menu-container {
         margin: auto;
+        width: 370px;
+        height: 350px;
+        padding: 10px 0;
+        gap: 0;
     }
     .my-canvas {
-        height: 300px;
-        width: 300px;
+        height: 280px;
+        width: 280px;
         margin: auto;
     }
     .menu-container .txt-input {
-        width: 70vw;
+        width: 270px;
+        height: 40px;
     }
     .menu-container .line-tools {
         width: 90vw;
         margin: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .btn-tools button {
-        width: 5vh;
+        width: 40px;
+        height: 40px;
         margin: 0 5px;
     }
     .menu-container .font-tools {
-        width: 85vw;
-        height: 25vh;
-        margin-top: 35px;
+        width: 360px;
+        height: 120px;
     }
     .font-tools select {
         height: 5vh;
@@ -619,9 +631,16 @@ span {
     .img-extras .btn-save,
     .btn-share,
     .btn-download {
-        width: 20vw;
+        width: 90px;
+        height: 40px;
+        margin: 5px 0;
+        font-size: 0.5rem;
     }
     .img-extras span {
         font-size: 0.9rem;
+    }
+    footer {
+        height: 20px;
+        font-size: 0.8rem;
     }
 }

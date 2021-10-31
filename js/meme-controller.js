@@ -142,11 +142,6 @@ function onMoveLineX(align) {
     renderCanvas();
 }
 
-function onMoveLineY(diff) {
-
-    moveLineY(diff)
-    renderCanvas();
-}
 
 function openMenu(elBtn) {
     document.body.classList.add('menu-open')
@@ -164,7 +159,15 @@ function onDrawText(txt, font, stroke, color, size, x, y) {
     gCtx.strokeStyle = stroke;
     gCtx.fillStyle = color;
     gCtx.font = `${size}px ${font}`;
-    gCtx.measureText((txt).width, x, y);
+    let txtParms = gCtx.measureText(txt);
+    console.log('txtParms.width', txtParms.width);
+    //start x , end - x+txtParms.width 
+    //start y , end - y + size 
     gCtx.fillText(txt, x, y);
     gCtx.strokeText(txt, x, y);
 }
+// function onMoveLineY(diff) {
+
+//     moveLineY(diff)
+//     renderCanvas();
+// }

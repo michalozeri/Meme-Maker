@@ -59,28 +59,17 @@ function moveMeme(dx, dy) {
 function addLine(txt) {
     if (gMeme.selectedLineIdx >= 2) return
     if (!txt) return
-    if (!gMeme.lines.length) {
-        var line = {
-            txt: '',
-            size: 20,
-            font: 'Impact',
-            align: 'left',
-            color: 'white',
-            stroke: 'black',
-            pos: { posX: 50, posY: 50 }
-        }
-    } else {
-        line = {
-            txt: '',
-            size: 20,
-            font: 'Impact',
-            align: 'left',
-            color: 'white',
-            stroke: 'black',
-            pos: { posX: 50, posY: 400 }
-        }
-        if (gMeme.lines.length === 2) line.pos = { posX: 50, posY: 200 };
+    var line = {
+        txt: '',
+        size: 20,
+        font: 'Impact',
+        align: 'left',
+        color: 'white',
+        stroke: 'black',
+        pos: (!gMeme.lines.length) ? { posX: 50, posY: 50 } : { posX: 50, posY: 400 }
     }
+
+    if (gMeme.lines.length - 1 === 2) line.pos = { posX: 50, posY: 200 };
     gMeme.lines.push(line);
     gMeme.selectedLineIdx++
         saveMemeToStorage();
@@ -104,17 +93,6 @@ function switchLine() {
     saveMemeToStorage();
 }
 
-function moveLineX(align) {
-    if (align === 'left') {
-        gMeme.lines[gMeme.selectedLineIdx].pos.posX = 10;
-    } else if (align === 'center') {
-        gMeme.lines[gMeme.selectedLineIdx].pos.posX = 180;
-    } else if (align === 'right') {
-        gMeme.lines[gMeme.selectedLineIdx].pos.posX = 350;
-    }
-    gMeme.lines[gMeme.selectedLineIdx].align = align
-    saveMemeToStorage()
-}
 
 function changeFont(fontType) {
     gMeme.lines[gMeme.selectedLineIdx].font = fontType;
@@ -165,3 +143,14 @@ function getImgsForDisplay() {
 function saveMemeToStorage() {
     saveToStorage(KEY, gMeme)
 }
+// function moveLineX(align) {
+//     if (align === 'left') {
+//         gMeme.lines[gMeme.selectedLineIdx].pos.posX = 10;
+//     } else if (align === 'center') {
+//         gMeme.lines[gMeme.selectedLineIdx].pos.posX = 180;
+//     } else if (align === 'right') {
+//         gMeme.lines[gMeme.selectedLineIdx].pos.posX = 350;
+//     }
+//     gMeme.lines[gMeme.selectedLineIdx].align = align
+//     saveMemeToStorage()
+// }
