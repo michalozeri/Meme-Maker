@@ -27,11 +27,13 @@ body {
     height: 70px;
     margin: 15px 10px;
     border-radius: 50px;
+    justify-content: space-between;
 }
 
 .main-header .header-container {
     margin: auto;
     max-width: 85vw;
+    justify-content: space-between;
 }
 
 .main-header .logo {
@@ -125,6 +127,7 @@ body {
     align-items: center;
     margin: 0 15px;
     width: 40vw;
+    font-size: 1.3rem;
 }
 
 .filter-by span {
@@ -252,13 +255,19 @@ select {
 }
 
 .row2 span {
-    font-size: 1.5rem;
-    color: #22252c
+    font-size: 1.8rem;
+    color: #22252c;
+    position: absolute;
+    cursor: pointer;
 }
 
 .row2 input {
-    height: 30px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
 }
 
 .img-extras .share {
@@ -299,31 +308,11 @@ select {
 }
 
 .line-tools .switch {
-    background: linear-gradient(to bottom, #aa34d9, #77168a);
-    border: outset 5px #aa34d9;
+    background: linear-gradient(to bottom, #65dff5, #258bba);
+    border: outset 5px #65dff5;
 }
 
 .line-tools .switch:hover {
-    background: linear-gradient(to bottom, #c573e6, #7f2e8f);
-    border: outset 5px #c573e6;
-}
-
-.line-tools .line-up {
-    background: linear-gradient(to bottom, #65dff5, #258bba);
-    border: outset 5px #65dff5;
-}
-
-.line-tools .line-up:hover {
-    background: linear-gradient(to bottom, #aaecf8, #4894b8);
-    border: outset 5px #aaecf8;
-}
-
-.line-tools .line-down {
-    background: linear-gradient(to bottom, #65dff5, #258bba);
-    border: outset 5px #65dff5;
-}
-
-.line-tools .line-down:hover {
     background: linear-gradient(to bottom, #aaecf8, #4894b8);
     border: outset 5px #aaecf8;
 }
@@ -463,7 +452,7 @@ span {
         font-size: 1rem;
     }
     .filter-by span {
-        font-size: 0.5rem;
+        font-size: 0.68em;
     }
     .header-container .btn-close,
     .header-container .btn-open {
@@ -524,7 +513,7 @@ span {
         max-width: 60vw;
     }
     .filter-by span {
-        font-size: 0.5rem;
+        font-size: 0.65rem;
     }
     .filter-area .btn-more {
         width: 20vw;
