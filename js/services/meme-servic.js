@@ -32,7 +32,7 @@ function createMeme(imgId) {
         isDrag: false,
         lines: [{
             txt: '',
-            size: 20,
+            size: 30,
             font: 'Impact',
             align: 'left',
             color: 'white',
