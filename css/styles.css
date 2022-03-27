@@ -24,7 +24,7 @@ body {
 
 .main-header {
     background: linear-gradient(to left, #30bb72, #0f9bb3);
-    height: 70px;
+    height: 10vh;
     margin: 15px 10px;
     border-radius: 50px;
     justify-content: space-between;
@@ -76,7 +76,7 @@ body {
 }
 
 .main-gallery {
-    max-height: 450px;
+   height: 80vh;
     overflow-y: auto;
     margin: auto;
     background-color: #383b42;
@@ -169,7 +169,7 @@ body {
 
 footer {
     background: linear-gradient(to left, #30bb72, #0f9bb3);
-    height: 30px;
+height: 5vh;
     margin: 15px auto;
     border-radius: 50px;
     font-size: 1.3rem;
@@ -178,7 +178,7 @@ footer {
 
 .main-container {
     display: none;
-    justify-content: space-between;
+    margin: 100px 170px 0;
 }
 
 .main-container .canvas-container {

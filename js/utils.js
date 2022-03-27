@@ -64,9 +64,7 @@ function addTouchListeners() {
 
 function onDown(ev) {
     const pos = getEvPos(ev)
-    console.log('false');
     if (!isMemeClicked(pos)) return
-    console.log('true');
     setMemeDrag(true)
     gStartPos = pos
     console.log(pos);
@@ -82,7 +80,6 @@ function onMove(ev) {
         gStartPos = pos
         moveMeme(dx, dy)
         renderCanvas()
-        console.log(meme);
     }
 }
 
